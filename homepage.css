@@ -5,16 +5,5 @@ body {
     background: white;
     margin: 5px;
 }
-h1 {
-    font-size: 20px;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    padding: 46px;
-    height: 150px;
-    border-bottom: 1px solid black
-}
 
-.shaded {
-    background: #8484ff;
-}
 
