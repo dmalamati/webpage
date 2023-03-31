@@ -6,13 +6,17 @@ body {
     margin: 5px;
 }
 
-.navbar-custom {
+nav {
     height: 150px;
 }
 
 .container{
     background-color: aquamarine;
     width: 1200px;
+}
+
+footer{
+    height: 100px;
 }
 
 
