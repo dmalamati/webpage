@@ -16,25 +16,40 @@
                 <img src="images/logo.png" alt="" width="250" height="58">
             </a>
             <form class="d-flex">
-                <button class="btn btn-primary me-2" type="button" onclick="window.location.href='homepage.html'">Home</button>
+                <button class="btn btn-light" type="button" onclick="window.location.href='homepage.html'" id="home-button">Home</button>
                 <!-- <button class="btn btn-primary me-2" type="submit">Home</button>-->
-                <button class="btn btn-light" type="submit">Products</button>
+                <button class="btn btn-primary me-2" type="submit">Products</button>
             </form>
         </div>
     </nav>
 </header>
 
 
-<main class="my-5>">
+<main class="my-5" style="padding: 0">
 
-<div class="">
+    <div class="container my-5">
+        <div class="input-group mb-3" style="width: 500px" id="search-bar">
+            <label for="search-bar">Search a product</label>
+            <input type="text" class="form-control" aria-describedby="search-button" >
+            <button class="btn btn-outline-secondary" type="button" id="search-button">Search</button>
 
-</div>
-
-
-
-
-
+        </div>
+    </div>
+    <div class="container my-5" style="padding: 0">
+        <h5>Results</h5>
+        <table class="table table-bordered" id="result-table">
+            <thead>
+             <tr>
+                 <th scope="col">ID</th>
+                 <th scope="col">Name</th>
+                 <th scope="col">Production year</th>
+                 <th scope="col">Price</th>
+                 <th scope="col">Color</th>
+                 <th scope="col">Size</th>
+             </tr>
+            </thead>
+        </table>
+    </div>
 
 
 </main>

@@ -5,3 +5,26 @@ body{
     background: white;
     margin: 5px;
 }
+#search-button{
+    height:50px;
+    width:90px;
+    color: white;
+    background: #0d6efd;
+}
+#home-button{
+    color:#0d6efd;
+}
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+}
+#search-bar{
+    height:45px;
+    margin-left:0;
+}
+main{
+    margin:0;
+    padding: 0;
+}
