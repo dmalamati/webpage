@@ -5,8 +5,16 @@ body {
     background: white;
     margin: 5px;
 }
-.my-5{
-    height:400px;
+
+.navbar-custom {
+    height: 150px;
+}
+
+.container{
+    background-color: aquamarine;
     width: 1200px;
 }
+
+
+
 
