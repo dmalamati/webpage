@@ -22,9 +22,31 @@ label {
 }
 #search-bar{
     height:45px;
-    margin-left:0;
 }
-main{
-    margin:0;
-    padding: 0;
+.container-fluid{
+    width: 1200px;
+    background: aquamarine;
+}
+.container{
+    width: 1200px;
+    background: aquamarine;
+}
+.input-group input#name {
+    margin-right: 800px;
+}
+.input-group input#Production-year {
+    margin-right: 800px;
+}
+.input-group input#Color {
+    margin-right: 800px;
+}
+.input-group input#Price {
+    margin-right: 800px;
+}
+.input-group input#Size {
+    margin-right: 800px;
+}
+.custom-input {
+    margin-right: 50px;
+    width: 100%;
 }

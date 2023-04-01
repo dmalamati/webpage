@@ -25,65 +25,62 @@
 </header>
 
 
-<main class="my-5" style="padding: 0">
+<main class="my-5">
 
-    <div class="container my-5">
+    <div class="container">
         <div class="input-group mb-3" style="width: 500px" id="search-bar">
             <label for="search-bar">Search a product</label>
             <input type="text" class="form-control" aria-describedby="search-button" >
             <button class="btn btn-light" type="button" id="search-button">Search</button>
+        </div>
+
+        <div class="col">
+            <h5>Results</h5>
+            <table class="table table-bordered" id="result-table">
+              <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Production year</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Size</th>
+                </tr>
+              </thead>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>Add a product</h3>
+
+        <div class="input-group mb-3">
+            <label for="name" class="col-form-label">Name</label>
+            <input type="text" class="form-control custom-input" id="name">
 
         </div>
-    </div>
-    <div class="container my-5" style="padding: 0">
-        <h5>Results</h5>
-        <table class="table table-bordered" id="result-table">
-            <thead>
-             <tr>
-                 <th scope="col">ID</th>
-                 <th scope="col">Name</th>
-                 <th scope="col">Production year</th>
-                 <th scope="col">Price</th>
-                 <th scope="col">Color</th>
-                 <th scope="col">Size</th>
-             </tr>
-            </thead>
-        </table>
-    </div>
-    <div class="container my-5">
-        <h3>Add a product</h3>
-        <div class="mb-3">
-            <div class="input-group mb-3">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" id="name">
-            </div>
+
+        <div class="input-group mb-3">
+            <label for="Production-year">Production year</label>
+            <input type="text" class="form-control custom-input" id="Production-year">
         </div>
-        <div class="mb-3">
-            <div class="input-group mb-3">
-                <label for="Production-year">Production year</label>
-                <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" id="Production-year">
-            </div>
-        </div>
-    <div class="mb-3">
+
         <div class="input-group mb-3">
             <label for="Price">Price</label>
-            <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" id="Price">
+            <input type="text" class="form-control custom-input" id="Price">
         </div>
-    </div>
-    <div class="mb-3">
+
         <div class="input-group mb-3">
             <label for="Color">Color</label>
-            <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" id="Color">
+            <input type="text" class="form-control custom-input" id="Color">
         </div>
-    </div>
-    <div class="mb-3">
+
         <div class="input-group mb-3">
             <label for="Size">Size</label>
-            <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" id="Size">
+            <input type="text" class="form-control custom-input" id="Size">
         </div>
     </div>
 
-    </div>
     <button class="btn btn-primary me-2" type="submit" style="margin-left: 1830px">Save</button>
 
 </main>
