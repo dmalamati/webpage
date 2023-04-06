@@ -11,44 +11,46 @@
 <!-- BEGIN CODE HERE -->
 
 <header>
-<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
-<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="images/logo.png" alt="" width="250" height="58">
-        </a>
-        <form class="d-flex">
-            <button class="btn btn-primary me-2" type="submit">Home</button>
-            <button class="btn btn-light" type="button" onclick="window.location.href='products.html'">Products</button>
-            <!--<button class="btn btn-light" type="submit">Products</button>-->
-        </form>
-    </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="" width="250" height="58">
+            </a>
+            <form class="d-flex">
+                <button class="btn btn-light" type="button" id="home-button">Home</button>
+                <button class="btn btn-primary me-2" type="button" onclick="window.location.href='products.html'">Products</button>
+            </form>
+        </div>
+    </nav>
 </header>
+
+
 
 <main class="my-5>">
 
-    <div class="mx-auto" style="max-width: 1200px;">
-        <div class="container-fluid my-5">
+    <!--<div class="mx-auto" style="max-width: 1200px;">-->
+        <!--<div class="container-fluid my-5">-->
+         <div class="container my-5" style="max-width: 1200px;">
             <div class="row row-cols-2">
-                <div class="col">
+                <div class="col" style="width: 600px;">
                     <h2 class="mt-4">Heading</h2>
                     <p class="mt-4">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                 </div>
-                <div class="col">
+                <div class="col" style="width: 600px;">
                     <img src="images/image-1.png" alt="" width="600" height="400">
                 </div>
             </div>
-        </div>
-    </div>
+         </div>
+        <!--</div>-->
+    <!--</div>-->
 
 
-    <div class="container my-5">
-        <div class="row row-cols-4 my-5">
-            <div class="col">
+    <div class="container my-5" style="max-width: 1200px;">
+        <div class="row row-cols-4">
+            <div class="col" style="width: 300px;">
                 <ul>
                     <li>Lorem ipsum</li>
                     <li>Lorem ipsum</li>
@@ -90,8 +92,8 @@
     </div>
 
 
-    <div class="container my-5">
-        <div class="row my-5">
+    <div class="container my-5" style="max-width: 1200px;">
+        <div class="row">
             <iframe src="https://www.csd.auth.gr/"  width="1200" height="600" ></iframe>
         </div>
     </div>
@@ -99,7 +101,8 @@
 </main>
 
 <footer class="footer py-3 bg-dark text-center">
-        <span class="text-white"> ワンピース </span>
+        <span class="text-white">LUCAS PATSIAS - 4035     IPPOKRATIS RAPTIS - 3884      MALAMATI DANIHL - 4046  </span>
+
 </footer>
 
 

@@ -16,33 +16,53 @@ body{
 }
 label {
     display: inline-block;
-    width: 100px;
+    width: 115px;
     text-align: right;
     margin-right: 10px;
+    vertical-align: bottom;
 }
+
+
 #search-bar{
     height:45px;
 }
 .container{
     width: 1200px;
-    background: aquamarine;
 }
+.input-group input#search-bar {
+
+}
+
 .input-group input#name {
     margin-right: 800px;
+    height: 45px;
 }
 .input-group input#Production-year {
     margin-right: 800px;
+    height: 45px;
 }
 .input-group input#Color {
     margin-right: 800px;
+    height: 45px;
 }
 .input-group input#Price {
     margin-right: 800px;
+    height: 45px;
 }
 .input-group input#Size {
     margin-right: 800px;
+    height: 45px;
 }
+
 .custom-input {
     margin-right: 50px;
     width: 100%;
+}
+
+nav {
+    height: 150px;
+}
+
+footer{
+    height: 100px;
 }

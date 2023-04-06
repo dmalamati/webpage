@@ -6,13 +6,12 @@ body {
     margin: 5px;
 }
 
-nav {
-    height: 150px;
+#home-button{
+    color:#0d6efd;
 }
 
-.container{
-    background-color: aquamarine;
-    width: 1200px;
+nav {
+    height: 150px;
 }
 
 footer{
