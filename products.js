@@ -12,7 +12,7 @@ window.onload = () => {
 searchButtonOnClick = () => {
     // BEGIN CODE HERE
 
-    const getName = document.getElementById("search-bar");
+    const getName = document.getElementById("search-input");
     // alert(getName.value);
     const res = new XMLHttpRequest();
     // res.open("GET", `${api}/timezone/${getContinent.value}/${getCity.value}`);
@@ -21,19 +21,25 @@ searchButtonOnClick = () => {
     res.onreadystatechange = () => {
         if (res.readyState == 4) {
             if (res.status == 200) {
-                // console.log(res.responseText);
-                const resultsDiv = document.getElementById("result-table");
-                resultsDiv.innerHTML = "";
-                const date = document.createElement("div");
+                // const resultsDiv = document.getElementById("result-table");
+
                 const resText = JSON.parse(res.responseText);
-                const datetime = {date: resText.datetime.split("T")[0], time: resText.datetime.split("T")[1]};
-                datetime.date = {day: datetime.date.split("-")[2], month: datetime.date.split("-")[1], year: datetime.date.split("-")[0]};
-                datetime.time = {hour: datetime.time.split(":")[0], minute: datetime.time.split(":")[1]}
-                date.innerHTML = `${datetime.date.day}/${datetime.date.month}/${datetime.date.year}`;
-                resultsDiv.appendChild(date);
-                const time = document.createElement("div");
-                time.innerHTML = `${datetime.time.hour}:${datetime.time.minute}`
-                resultsDiv.appendChild(time);
+                const tableBody = document.getElementById("result-table");
+                tableBody.innerHTML = "";
+
+                // Δημιουργούμε γραμμές και κελιά για κάθε αντικείμενο στο resText
+                resText.forEach((item) => {
+                    const row = document.createElement("tr");
+
+                    for (let key in item) {
+                        const cell = document.createElement("td");
+                        cell.innerText = item[key];
+                        row.appendChild(cell);
+                    }
+
+                    // Προσθέτουμε τη γραμμή στο tbody του πίνακα
+                    tableBody.appendChild(row);
+                });
             }
         }
     };
