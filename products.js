@@ -13,15 +13,12 @@ searchButtonOnClick = () => {
     // BEGIN CODE HERE
 
     const getName = document.getElementById("search-input");
-    // alert(getName.value);
     const res = new XMLHttpRequest();
-    // res.open("GET", `${api}/timezone/${getContinent.value}/${getCity.value}`);
     res.open("GET", `${api}/search?name=${getName.value}`);
 
     res.onreadystatechange = () => {
         if (res.readyState == 4) {
             if (res.status == 200) {
-                // const resultsDiv = document.getElementById("result-table");
 
                 const resText = JSON.parse(res.responseText);
                 const tableBody = document.getElementById("result-table");
@@ -29,7 +26,6 @@ searchButtonOnClick = () => {
                     tableBody.deleteRow(1);
                 }
 
-                // Δημιουργούμε γραμμές και κελιά για κάθε αντικείμενο στο resText
                 resText.forEach((item) => {
                     const row = document.createElement("tr");
 
@@ -38,13 +34,14 @@ searchButtonOnClick = () => {
                         cell.innerText = item[key];
                         row.appendChild(cell);
                     }
-                    // Προσθέτουμε τη γραμμή στο tbody του πίνακα
+
                     tableBody.appendChild(row);
                 });
             }
         }
     };
     res.send();
+
     // END CODE HERE
 }
 
@@ -65,9 +62,8 @@ productFormOnSubmit = () => {
             }
         }
     };
-    // same for the project
+
     res.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    // change input (inside the JSON stringify)for the project
     res.send(JSON.stringify({
         "name": getName.value,
         "production_year": parseInt(getProduction_year.value),

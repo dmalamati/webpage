@@ -18,6 +18,18 @@ footer{
     height: 100px;
 }
 
+ul.horizontal-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+ul.horizontal-list li {
+    float: left;
+    padding: 0 10px;
+}
+
 
 
 
