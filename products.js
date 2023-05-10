@@ -25,7 +25,9 @@ searchButtonOnClick = () => {
 
                 const resText = JSON.parse(res.responseText);
                 const tableBody = document.getElementById("result-table");
-                tableBody.innerHTML = "";
+                while (tableBody.rows.length > 1) {
+                    tableBody.deleteRow(1);
+                }
 
                 // Δημιουργούμε γραμμές και κελιά για κάθε αντικείμενο στο resText
                 resText.forEach((item) => {
@@ -36,7 +38,6 @@ searchButtonOnClick = () => {
                         cell.innerText = item[key];
                         row.appendChild(cell);
                     }
-
                     // Προσθέτουμε τη γραμμή στο tbody του πίνακα
                     tableBody.appendChild(row);
                 });
