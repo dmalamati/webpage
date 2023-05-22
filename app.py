@@ -21,7 +21,8 @@ def search():
     # BEGIN CODE HERE
 
     name = request.args.get("name")
-    doc = mongo.db.products.find({"name": {"$regex": "^.*"+name+".*$"}}).sort("price", -1)
+    #doc = mongo.db.products.find({"name": {"$regex": "^.*"+name+".*$"}}).sort("price", -1)
+    doc = mongo.db.products.find({"name": {"$regex": name, "$options": "i"}}).sort("price", -1)
     doc_list = list(doc)
     for item in doc_list:
         item['_id'] = str(item['_id'])
