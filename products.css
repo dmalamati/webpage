@@ -16,10 +16,9 @@ body{
 }
 label {
     display: inline-block;
-    width: 115px;
-    text-align: right;
+    width: 130px;
+    text-align: left;
     margin-right: 10px;
-    vertical-align: bottom;
 }
 
 
@@ -28,9 +27,6 @@ label {
 }
 .container{
     width: 1200px;
-}
-.input-group input#search-bar {
-
 }
 
 .input-group input#Name {
@@ -54,10 +50,6 @@ label {
     height: 45px;
 }
 
-.custom-input {
-    margin-right: 50px;
-    width: 100%;
-}
 
 nav {
     height: 150px;
@@ -65,4 +57,5 @@ nav {
 
 footer{
     height: 100px;
+    padding-top: 39px;
 }
