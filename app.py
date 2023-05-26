@@ -21,8 +21,19 @@ def search():
     # BEGIN CODE HERE
 
     name = request.args.get("name")
-    #doc = mongo.db.products.find({"name": {"$regex": "^.*"+name+".*$"}}).sort("price", -1)
-    doc = mongo.db.products.find({"name": {"$regex": name, "$options": "i"}}).sort("price", -1)
+    # escaped_name = re.escape(name) but needs import re
+    # or
+    escaped_name = ""
+    special_characters = r".^$*+?{}[]\|()"
+    for char in name:
+        if char in special_characters:
+            escaped_name += "\\" + char
+        else:
+            escaped_name += char
+
+    regex_pattern = f".*{escaped_name}.*"
+
+    doc = mongo.db.products.find({"name": {"$regex": regex_pattern, "$options": "i"}}).sort("price", -1)
     doc_list = list(doc)
     for item in doc_list:
         item['_id'] = str(item['_id'])
@@ -30,13 +41,26 @@ def search():
 
     # END CODE HERE
 
+# @app.route("/search", methods=["GET"])
+# def search():
+#     # BEGIN CODE HERE
+#
+#     name = request.args.get("name")
+#     #doc = mongo.db.products.find({"name": {"$regex": "^.*"+name+".*$"}}).sort("price", -1)
+#     doc = mongo.db.products.find({"name": {"$regex": name, "$options": "i"}}).sort("price", -1)
+#     doc_list = list(doc)
+#     for item in doc_list:
+#         item['_id'] = str(item['_id'])
+#     return jsonify(doc_list)
+#
+#     # END CODE HERE
+
 
 @app.route("/add-product", methods=["POST"])
 def add_product():
     # BEGIN CODE HERE
 
     new_product = request.json
-    print(new_product)
     exists = mongo.db.products.find_one({"name": new_product["name"]})
     if exists is not None:
         mongo.db.products.update_one({"name": new_product["name"]}, {"$set": {"production_year": new_product["production_year"], "price": new_product["price"], "color": new_product["color"], "size": new_product["size"]}})

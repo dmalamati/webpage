@@ -29,11 +29,35 @@ searchButtonOnClick = () => {
                 resText.forEach((item) => {
                     const row = document.createElement("tr");
 
-                    for (let key in item) {
-                        const cell = document.createElement("td");
-                        cell.innerText = item[key];
-                        row.appendChild(cell);
-                    }
+                    const id_cell = document.createElement("td");
+                    id_cell.innerText = item["_id"];
+                    row.appendChild(id_cell);
+
+                    const name_cell = document.createElement("td");
+                    name_cell.innerText = item["name"];
+                    row.appendChild(name_cell);
+
+                    const production_year_cell = document.createElement("td");
+                    production_year_cell.innerText = item["production_year"];
+                    row.appendChild(production_year_cell);
+
+                    const price_cell = document.createElement("td");
+                    price_cell.innerText = item["price"];
+                    row.appendChild(price_cell);
+
+                    const color_cell = document.createElement("td");
+                    color_cell.innerText = item["color"];
+                    row.appendChild(color_cell);
+
+                    const size_cell = document.createElement("td");
+                    size_cell.innerText = item["size"];
+                    row.appendChild(size_cell);
+
+                    // for (let key in item) {
+                    //     const cell = document.createElement("td");
+                    //     cell.innerText = item[key];
+                    //     row.appendChild(cell);
+                    // }
 
                     tableBody.appendChild(row);
                 });
