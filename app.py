@@ -21,39 +21,15 @@ def search():
     # BEGIN CODE HERE
 
     name = request.args.get("name")
-    # escaped_name = re.escape(name) but needs import re
-    # or
-    escaped_name = ""
-    special_characters = r".^$*+?{}[]\|()"
-    for char in name:
-        if char in special_characters:
-            escaped_name += "\\" + char
-        else:
-            escaped_name += char
-
-    regex_pattern = f".*{escaped_name}.*"
-
-    doc = mongo.db.products.find({"name": {"$regex": regex_pattern, "$options": "i"}}).sort("price", -1)
+    # "$options": "i" makes the search case insensitive
+    doc = mongo.db.products.find({"name": {"$regex": name, "$options": "i"}}).sort("price", -1)
     doc_list = list(doc)
+    # this for-loop is to prevent an error caused by the id that MongoDB gives to the products
     for item in doc_list:
         item['_id'] = str(item['_id'])
     return jsonify(doc_list)
 
     # END CODE HERE
-
-# @app.route("/search", methods=["GET"])
-# def search():
-#     # BEGIN CODE HERE
-#
-#     name = request.args.get("name")
-#     #doc = mongo.db.products.find({"name": {"$regex": "^.*"+name+".*$"}}).sort("price", -1)
-#     doc = mongo.db.products.find({"name": {"$regex": name, "$options": "i"}}).sort("price", -1)
-#     doc_list = list(doc)
-#     for item in doc_list:
-#         item['_id'] = str(item['_id'])
-#     return jsonify(doc_list)
-#
-#     # END CODE HERE
 
 
 @app.route("/add-product", methods=["POST"])

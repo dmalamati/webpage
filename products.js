@@ -2,10 +2,12 @@ const api = "http://127.0.0.1:5000";
 
 window.onload = () => {
     // BEGIN CODE HERE
+
     const searchButton = document.getElementById("search-button");
     searchButton.onclick = searchButtonOnClick;
     const saveButton = document.getElementById("save-button");
     saveButton.onclick = productFormOnSubmit;
+
     // END CODE HERE
 }
 
@@ -51,14 +53,8 @@ searchButtonOnClick = () => {
 
                     const size_cell = document.createElement("td");
                     size_cell.innerText = item["size"];
+
                     row.appendChild(size_cell);
-
-                    // for (let key in item) {
-                    //     const cell = document.createElement("td");
-                    //     cell.innerText = item[key];
-                    //     row.appendChild(cell);
-                    // }
-
                     tableBody.appendChild(row);
                 });
             }
@@ -71,6 +67,7 @@ searchButtonOnClick = () => {
 
 productFormOnSubmit = () => {
     // BEGIN CODE HERE
+
     const getName = document.getElementById("Name");
     const getProduction_year = document.getElementById("Production-year");
     const getPrice = document.getElementById("Price");
@@ -95,5 +92,6 @@ productFormOnSubmit = () => {
         "color": parseInt(getColor.value),
         "size": parseInt(getSize.value)
     }));
+
     // END CODE HERE
 }
