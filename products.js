@@ -74,24 +74,35 @@ productFormOnSubmit = () => {
     const getColor = document.getElementById("Color");
     const getSize = document.getElementById("Size");
 
-    const res = new XMLHttpRequest();
-    res.open("POST", `${api}/add-product`);
-    res.onreadystatechange = () => {
-        if (res.readyState == 4) {
-            if (res.status == 200) {
-                alert(res.responseText);
+    if (getName.value !== "" && getProduction_year.value !== "" && getPrice.value !== "" && getColor.value !== "" && getSize.value !== "") {
+        const res = new XMLHttpRequest();
+        res.open("POST", `${api}/add-product`);
+        res.onreadystatechange = () => {
+            if (res.readyState == 4) {
+                if (res.status == 200) {
+                    alert(res.responseText);
+                }
             }
-        }
-    };
+        };
 
-    res.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    res.send(JSON.stringify({
-        "name": getName.value,
-        "production_year": parseInt(getProduction_year.value),
-        "price": parseInt(getPrice.value),
-        "color": parseInt(getColor.value),
-        "size": parseInt(getSize.value)
-    }));
+        res.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        res.send(JSON.stringify({
+            "name": getName.value,
+            "production_year": parseInt(getProduction_year.value),
+            "price": parseInt(getPrice.value),
+            "color": parseInt(getColor.value),
+            "size": parseInt(getSize.value)
+        }));
+
+        getName.value = ""
+        getProduction_year.value = ""
+        getPrice.value = ""
+        getColor.value = ""
+        getSize.value = ""
+        alert("OK")
+    } else {
+        alert("MISSING VALUES")
+    }
 
     // END CODE HERE
 }
